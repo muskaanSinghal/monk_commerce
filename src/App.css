@@ -1,0 +1,111 @@
+.header {
+    padding: 9px 21px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 17px;
+    border-bottom: 1px solid #D1D1D1;
+    position: sticky;
+    top: 0px;
+    background-color: #F6F6F8;
+}
+
+.header span {
+    height: 31px;
+    width: 31px;
+    object-fit: contain;
+}
+
+.header h1 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #7E8185;
+}
+
+.btn {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+
+  border: 2px solid var(--primary-green);
+  border-radius: 4px;
+  transition: all 200ms ease-out;
+}
+
+.btn.small-filled {
+  width: 167px;
+  padding-block: 6px;
+  color: var(--secondary);
+  background-color: var(--primary-green);
+}
+
+.btn.small-filled:not(:disabled):hover {
+  color: var(--primary-green);
+  background-color: var(--secondary);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+
+.align-end {
+    margin-left: auto;
+}
+
+.checkbox {
+  position: relative;
+}
+
+.checkbox label {
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.checkbox label {
+  content: "";
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}
+
+.checkbox input[type="checkbox"]:checked~label {
+  background-color: var(--primary-green);
+  border: 1px solid transparent;
+}
+
+.checkbox input[type="checkbox"]:checked~label::after {
+  content: "";
+  position: absolute;
+  left: 4.8px;
+  top: 6px;
+  height: 12px;
+  width: 14px;
+  mask: url(./assets/icons/icon-check.svg) no-repeat center center;
+  mask-size: 14px;
+  background-color: #FFFFFF;
+}
+
+.shadow {
+    padding: 8px 10px 4px;/* Adding as a workaround*/
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    font-size: 14px;
+    /* line-height: 21px;  not consistent across browsers*/
+}
+
+.rounded {
+  border-radius: 30px;
+}
