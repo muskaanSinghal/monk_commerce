@@ -1,0 +1,166 @@
+.product {
+    padding-bottom: 30px;
+}
+
+.product__details {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    max-width: 934px;
+}
+
+.product__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
+.product__title {
+    max-width: 215px;
+    min-width: 215px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.product--empty .product__title {
+    color: rgba(0,0,0,0.5);
+}
+
+.product__index {
+    color: rgba(0,0,0,0.8);
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0px;
+}
+
+.cta__edit {
+    height: 16px;
+    width: 16px;
+    mask: url(./../../assets/icons/icon-edit.svg) no-repeat center center;
+    mask-size: 16px;
+    background-color:var(--primary-green) ;
+    color: var(--primary-green);
+    cursor: pointer;
+}
+
+.cta__drag {
+    height: 14px;
+    width: 7px;
+    mask: url(./../../assets/icons/icon-drag.svg) no-repeat center center;
+    mask-size: 7px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cta__clear {
+    height: 11.7px;
+    width: 11.7px;
+    mask: url(./../../assets/icons/icon-close.svg) no-repeat center center;
+    mask-size: 11.7px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.toggle-variants {
+    background-color: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #006EFF;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+}
+
+.toggle-variants span:first-of-type {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 21px;
+    text-decoration: underline;
+}
+
+.toggle-variants span:last-of-type {
+    display: inline-block;
+    height: 11px;
+    width: 11px;
+
+    mask: url(./../../assets/icons/icon-chevron.svg) no-repeat center center;
+    mask-size: 11px;
+    background-color: #006EFF;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.discount__field {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3px;
+}
+
+.discount__field input {
+    width: 69px;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.discount__field select {
+    width: 95px;
+    font-size: 14px;
+    display: inline-block;
+    align-self: stretch;/* Added coz style line select is not consistent across browsers*/
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.product__variants {
+    padding: 18px 0px 0px 53px;
+}
+
+.product__variant {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.product__variant:not(:last-child) {
+    margin-bottom: 22px;
+}
+
+.variant__info {
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.variant__info button {
+    flex-shrink: 0;
+}
+
+.variant__info > div {
+    flex: 1;
+    padding: 5px 17px;
+}
+
+.variant__discount {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3px;
+}
+
+.discount__value {
+    width: 69px;
+}
+
+.discount__type {
+    width: 95px;
+}
