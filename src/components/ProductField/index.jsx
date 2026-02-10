@@ -58,7 +58,9 @@ const ProductField = ({
     onVariantDeselect,
     showClear
 }) => {
-    const { isEmpty, title, variants, id = `product-${index}` } = product;
+    const { isEmpty, title, variants = [], id = `product-${index}` } = product;
+    const areMultiVariantsPresent = variants?.length > 1;
+
     const [addingDiscount, setAddingDiscount] = useState(false);
     const [showVariants, setShowVariants] = useState(false);
 
@@ -149,7 +151,7 @@ const ProductField = ({
                     ></button>}
             </div>
 
-            {!isEmpty &&
+            {(!isEmpty && areMultiVariantsPresent) &&
                 <button className={`${styles["toggle-variants"]} align-end`}>
                     <span
                         className="title"
@@ -161,7 +163,7 @@ const ProductField = ({
                 </button>}
 
             {/* Expanded content */}
-            {showVariants &&
+            {(showVariants || !areMultiVariantsPresent) &&
                 <SortableContext items={variants.map((v) => v.id)}>
                     <div className={styles.product__variants}>
                         {variants?.map((variant) => (

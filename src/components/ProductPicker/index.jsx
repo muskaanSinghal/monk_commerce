@@ -45,7 +45,7 @@ const Product = ({ details = {}, selectedIds = [], onProductSelect, onVariantSel
                     const availableInventory = variant?.inventory_quantity;
 
                     return (
-                        <div className={styles.product__variant}>
+                        <div className={styles.product__variant} key={`variant-${variant?.id}`}>
                             <div className={`${styles.variant__details} checkbox`}>
                                 <input
                                     type="checkbox"
