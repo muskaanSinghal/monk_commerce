@@ -73,7 +73,7 @@ const Product = ({ details = {}, selectedIds = [], onProductSelect, onVariantSel
     )
 }
 
-const ProductPicker = ({ onClose, onAdd, fieldIdx, alreadySelectedProducts, currentFieldData }) => {
+const ProductPicker = ({ onClose, onAdd, fieldIdx, alreadySelectedProducts }) => {
     const [availableProducts, setAvailableProducts] = useState([]);
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
@@ -85,10 +85,7 @@ const ProductPicker = ({ onClose, onAdd, fieldIdx, alreadySelectedProducts, curr
     const page = useRef(1);
 
     // Filtered list for filtering other selected prodcuts;
-    const productList = availableProducts.filter((pro) => {
-        if (pro.id === currentFieldData?.id) return true;
-        return !alreadySelectedProducts.has(pro.id);
-    })
+    const productList = availableProducts.filter((pro) => !alreadySelectedProducts.has(pro.id));
 
     // We can move this logic into parent component to efficiently fetch store products.
     // We can add abort controllers to efficiently handle stale calls as well.
@@ -121,15 +118,6 @@ const ProductPicker = ({ onClose, onAdd, fieldIdx, alreadySelectedProducts, curr
         setHasMore(true);
         fetchStoreProducts({ search, flush: true });
     }, [search])
-
-    useEffect(() => {
-        if (currentFieldData?.id && !currentFieldData?.isEmpty) {
-            const prodId = currentFieldData?.id;
-            const variants = currentFieldData?.variants?.map((variant) => `variant-${prodId}-${variant?.id}`);
-            const alreadyAddedIds = [`product-${prodId}`];
-            setSelectedIds([...alreadyAddedIds, ...variants]);
-        }
-    }, [currentFieldData])
 
     const handleSearchChange = () => {
         if (debounceRef.current) clearTimeout(debounceRef.current);

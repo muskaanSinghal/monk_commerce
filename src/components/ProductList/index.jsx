@@ -162,7 +162,6 @@ const ProductList = () => {
                         onAdd={handleProductsSelection}
                         fieldIdx={editingField}
                         alreadySelectedProducts={selectedProductsSet}
-                        currentFieldData={selectedProducts[editingField]}
                     />
                 </Modal>
             )}
